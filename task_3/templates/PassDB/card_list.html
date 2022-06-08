@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Card list in database</h1>
+    {% if card_list %}
+    <ul>
+        {% for single_data in card_list %}
+        <li>
+            <a href="{{ single_data.get_absolute_url }}">
+                {{ single_data.card_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No data in category Cards</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Input label to search for</h1>
+    <form method="POST" action="{% url 'search_pass' %}">
+        {% csrf_token %}
+        <p>
+            <label>Enter password label</label><br>
+            <input type="text" name="pass_label" />
+        <input type="submit" value="Search">
+    </form>
+{% if label_for_searching %}
+    <p>The results for <strong>{{ label_for_searching }}</strong></p>
+    <h3>In Cards:</h3>
+        {% if card_results %}
+            <ul>
+                {% for single_result in card_results %}
+                    <li>
+                        <a href="{{ single_result.get_absolute_url }}">
+                        {{ single_result }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No any data</p>
+        {% endif %}
+    <h3>In Logins:</h3>
+        {% if login_results %}
+            <ul>
+                {% for single_result in login_results %}
+                    <li>
+                        <a href="{{ single_result.get_absolute_url }}">
+                        {{ single_result }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No any data</p>
+        {% endif %}
+    <h3>In Notes:</h3>
+        {% if note_results %}
+            <ul>
+                {% for single_result in note_results %}
+                    <li>
+                        <a href="{{ single_result.get_absolute_url }}">
+                        {{ single_result }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No any data</p>
+        {% endif %}
+{% endif %}
+{% endblock %}

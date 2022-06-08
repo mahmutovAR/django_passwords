@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Login label: {{ login.account_name }}</h1>
+    <p><strong>URL:</strong> {{ login.account_url }}</p>
+    <p><strong>Log name:</strong> {{ login.account_login }}</p>
+    <p><strong>Password:</strong> {{ login.account_password }}</p>
+    <p><strong>Note:</strong> {{ login.account_note }}</p>
+
+{% endblock %}

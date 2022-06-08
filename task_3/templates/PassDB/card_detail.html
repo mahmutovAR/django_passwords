@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Card label: {{ card.card_name }}</h1>
+    <p><strong>Card number:</strong> {{ card.card_number }}</p>
+    <p><strong>Valid thru:</strong> {{ card.card_validity }}</p>
+    <p><strong>Cardholder:</strong> {{ card.card_holder }}</p>
+    <p><strong>CVV:</strong> {{ card.card_cvv }}</p>
+    <p><strong>PIN code:</strong> {{ card.card_pin }}</p>
+    <p><strong>Note:</strong> {{ card.card_note }}</p>
+
+{% endblock %}

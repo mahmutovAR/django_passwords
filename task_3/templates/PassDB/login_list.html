@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Login list in database</h1>
+    {% if login_list %}
+    <ul>
+        {% for single_data in login_list %}
+        <li>
+            <a href="{{ single_data.get_absolute_url }}">
+                {{ single_data.account_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No data in category Logins</p>
+    {% endif %}
+{% endblock %}

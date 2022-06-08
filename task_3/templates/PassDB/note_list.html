@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Note list in database</h1>
+    {% if note_list %}
+    <ul>
+        {% for single_data in note_list %}
+        <li>
+            <a href="{{ single_data.get_absolute_url }}">
+                {{ single_data.note_label }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No data in category Notes</p>
+    {% endif %}
+{% endblock %}

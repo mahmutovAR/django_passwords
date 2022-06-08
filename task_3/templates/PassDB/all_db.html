@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>List of inputted databases</h1>
+<h3><a href="clear_pass/">Clear current password database</a></h3>
+{% if addpass_list %}
+    <ul>
+        {% for single_data in addpass_list %}
+        <DL>
+            <DT>{{ single_data.db_label }}
+                >> <a href="load_pass/{{ single_data.id }}">Load passwords</a> |
+                <a href="edit_data/{{ single_data.id }}">Edit</a> |
+                <a href="delete_data/{{ single_data.id }}">Delete</a></DT>
+            <DD><B>Date</B>: {{ single_data.db_date }}
+                <B>Path to file</B>: {{ single_data.db_path }}</DD>
+        </DL>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No any database</p>
+    {% endif %}
+{% endblock %}

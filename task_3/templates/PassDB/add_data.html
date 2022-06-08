@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add Passwords File</h1>
+    <form method="POST" action="{% url 'add_pass' %}">
+        {% csrf_token %}
+        <p>
+            <label>Enter label</label><br>
+            <input type="text" name="db_label" />
+        </p>
+        <p>
+            <label>Enter date</label><br>
+            <input type="date" name="db_date" />
+        </p>
+        <p>
+            <label>Choose database</label><br>
+            <input type="file" name="db_path" />
+        </p>
+        <input type="submit" value="Save data">
+    </form>
+{% endblock %}

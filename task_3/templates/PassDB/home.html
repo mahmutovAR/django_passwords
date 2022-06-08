@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Homepage</h1>
+
+<p>Welcome to <em>Web Password Manager</em> this application
+helps You to use password's database</p>
+<h3>Current database contains:</h3>
+<ul>
+    <li><strong>Cards amount: </strong>{{ num_cards }}</li>
+    <li><strong>Logins amount: </strong>{{ num_logins }}</li>
+    <li><strong>Notes amount: </strong>{{ num_notes }}</li>
+</ul>
+<p><strong>Databases available for loading: </strong>{{ num_db }}</p>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Edit Passwords File</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Enter label</label><br>
+            <input type="text" name="db_label" value="{{ query_data.db_label }}"/>
+        </p>
+        <p>
+            <label>Enter date</label><br>
+            <input type="date" name="db_date" value="{{ query_data.db_date }}"/>
+        </p>
+        <input type="submit" value="Save data">
+    </form>
+{% endblock %}

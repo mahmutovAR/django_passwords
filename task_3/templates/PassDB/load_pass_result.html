@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Load Passwords</h1>
+
+<p>The loading of database <B>{{ db_name }}</B> was completed</p>
+<h2>Chosen database contains:</h2>
+<ul>
+    <li><strong>Cards amount: </strong>{{ cards_in_db }}</li>
+    <li><strong>Logins amount: </strong>{{ logins_in_db }}</li>
+    <li><strong>Notes amount: </strong>{{ notes_in_db }}</li>
+</ul>
+{% endblock %}
